@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp2.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+        xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <dxlc:LayoutControl Orientation="Vertical" VerticalAlignment="Top">
+        <dxlc:LayoutGroup x:Name="Send" Header="Sender" Orientation="Vertical" View="GroupBox" HorizontalAlignment="Center" >
+            <!-- Click the button to send a message -->
+            <Button x:Name="Emit" Content="Emit" Command="{Binding UpdateCommand}" Width="100" Height="100" />
+        </dxlc:LayoutGroup>
+
+        <dxlc:LayoutGroup x:Name="Receive" Header="Receiver" Orientation="Vertical" View="GroupBox" HorizontalAlignment="Center">
+            <TextBlock Text="{Binding Message}" FontSize="44" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Teal" />
+        </dxlc:LayoutGroup>
+
+        <dxlc:LayoutGroup x:Name="Shell" Header="Shell" Orientation="Vertical" View="GroupBox" HorizontalAlignment="Center">
+            <TextBlock Text="{Binding Message}" FontSize="44" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Red" />
+        </dxlc:LayoutGroup>
+    </dxlc:LayoutControl>
+</Window>
